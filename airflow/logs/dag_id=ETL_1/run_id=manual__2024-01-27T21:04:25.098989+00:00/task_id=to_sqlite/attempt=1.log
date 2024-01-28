@@ -1,0 +1,88 @@
+[2024-01-27T21:04:35.779+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_1.to_sqlite manual__2024-01-27T21:04:25.098989+00:00 [queued]>
+[2024-01-27T21:04:35.787+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_1.to_sqlite manual__2024-01-27T21:04:25.098989+00:00 [queued]>
+[2024-01-27T21:04:35.787+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2024-01-27T21:04:35.826+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): to_sqlite> on 2024-01-27 21:04:25.098989+00:00
+[2024-01-27T21:04:35.831+0000] {standard_task_runner.py:57} INFO - Started process 15388 to run task
+[2024-01-27T21:04:35.834+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'ETL_1', 'to_sqlite', 'manual__2024-01-27T21:04:25.098989+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/ETL_1.py', '--cfg-path', '/tmp/tmp5r0ma434']
+[2024-01-27T21:04:35.835+0000] {standard_task_runner.py:85} INFO - Job 29: Subtask to_sqlite
+[2024-01-27T21:04:35.893+0000] {task_command.py:410} INFO - Running <TaskInstance: ETL_1.to_sqlite manual__2024-01-27T21:04:25.098989+00:00 [running]> on host codespaces-ca3784
+[2024-01-27T21:04:35.991+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ETL_1' AIRFLOW_CTX_TASK_ID='to_sqlite' AIRFLOW_CTX_EXECUTION_DATE='2024-01-27T21:04:25.098989+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-01-27T21:04:25.098989+00:00'
+[2024-01-27T21:04:35.993+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-01-27T21:04:35.993+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo -e ".separator ","\n. import /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv monthly_info" | sqlite3 /workspaces/hands-on-introduction-data-engineering-4395021/lab/challenge/challenge-load-db.db']
+[2024-01-27T21:04:36.007+0000] {subprocess.py:86} INFO - Output:
+[2024-01-27T21:04:36.012+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:1: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.012+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:2: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.013+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:3: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.013+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:4: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.013+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:5: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.013+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:6: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.013+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:7: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.014+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:8: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.014+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:9: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.014+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:10: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.014+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:11: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.014+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:12: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.014+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:13: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.014+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:14: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.014+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:15: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.015+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:16: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.015+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:17: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.015+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:18: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.015+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:19: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.015+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:20: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.015+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:21: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.015+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:22: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.015+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:23: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.015+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:24: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.016+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:25: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.016+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:26: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.016+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:27: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.016+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:28: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.016+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:29: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.016+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:30: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.016+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:31: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.016+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:32: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.017+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:33: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.017+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:34: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.017+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:35: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.017+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:36: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.017+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:37: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.017+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:38: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.017+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:39: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.017+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:40: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.017+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:41: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.018+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:42: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.018+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:43: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.018+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:44: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.018+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:45: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.018+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:46: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.018+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:47: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.018+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:48: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.018+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:49: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.019+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:50: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.019+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:51: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.019+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:52: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.019+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:53: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.019+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:54: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.019+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:55: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.019+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:56: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.019+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:57: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.020+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:58: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.020+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:59: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.020+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:60: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.020+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:61: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.020+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:62: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.020+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:63: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.020+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:64: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.020+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:65: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.020+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:66: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.021+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:67: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.021+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:68: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.021+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:69: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.021+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:70: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.021+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:71: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.021+0000] {subprocess.py:93} INFO - /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv:72: expected 5 columns but found 4 - filling the rest with NULL
+[2024-01-27T21:04:36.058+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-01-27T21:04:36.094+0000] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=ETL_1, task_id=to_sqlite, execution_date=20240127T210425, start_date=20240127T210435, end_date=20240127T210436
+[2024-01-27T21:04:36.167+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2024-01-27T21:04:36.177+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

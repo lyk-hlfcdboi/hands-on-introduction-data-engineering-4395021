@@ -1,0 +1,9 @@
+[2024-01-27 20:32:39 +0000] [3117] [INFO] Starting gunicorn 20.1.0
+[2024-01-27 20:32:39 +0000] [3117] [INFO] Listening at: http://[::]:8793 (3117)
+[2024-01-27 20:32:39 +0000] [3117] [INFO] Using worker: sync
+[2024-01-27 20:32:39 +0000] [3118] [INFO] Booting worker with pid: 3118
+[2024-01-27 20:32:39 +0000] [3120] [INFO] Booting worker with pid: 3120
+[2024-01-27 22:38:59 +0000] [3117] [INFO] Handling signal: term
+[2024-01-27 22:38:59 +0000] [3118] [INFO] Worker exiting (pid: 3118)
+[2024-01-27 22:38:59 +0000] [3120] [INFO] Worker exiting (pid: 3120)
+[2024-01-27 22:39:00 +0000] [3117] [INFO] Shutting down: Master

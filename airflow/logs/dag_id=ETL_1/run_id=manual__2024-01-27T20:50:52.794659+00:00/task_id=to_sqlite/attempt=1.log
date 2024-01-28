@@ -1,0 +1,16 @@
+[2024-01-27T20:51:02.463+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_1.to_sqlite manual__2024-01-27T20:50:52.794659+00:00 [queued]>
+[2024-01-27T20:51:02.467+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_1.to_sqlite manual__2024-01-27T20:50:52.794659+00:00 [queued]>
+[2024-01-27T20:51:02.468+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2024-01-27T20:51:02.503+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): to_sqlite> on 2024-01-27 20:50:52.794659+00:00
+[2024-01-27T20:51:02.509+0000] {standard_task_runner.py:57} INFO - Started process 10037 to run task
+[2024-01-27T20:51:02.516+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'ETL_1', 'to_sqlite', 'manual__2024-01-27T20:50:52.794659+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/ETL_1.py', '--cfg-path', '/tmp/tmp4m0l34mq']
+[2024-01-27T20:51:02.517+0000] {standard_task_runner.py:85} INFO - Job 23: Subtask to_sqlite
+[2024-01-27T20:51:02.656+0000] {task_command.py:410} INFO - Running <TaskInstance: ETL_1.to_sqlite manual__2024-01-27T20:50:52.794659+00:00 [running]> on host codespaces-ca3784
+[2024-01-27T20:51:02.892+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ETL_1' AIRFLOW_CTX_TASK_ID='to_sqlite' AIRFLOW_CTX_EXECUTION_DATE='2024-01-27T20:50:52.794659+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-01-27T20:50:52.794659+00:00'
+[2024-01-27T20:51:02.893+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-01-27T20:51:02.894+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo -e ".separator ","\n. import --skip 1 /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv monthly_info" | sqlite3 /workspaces/hands-on-introduction-data-engineering-4395021/lab/challenge/challenge-load-db.db']
+[2024-01-27T20:51:02.903+0000] {subprocess.py:86} INFO - Output:
+[2024-01-27T20:51:02.962+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-01-27T20:51:02.998+0000] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=ETL_1, task_id=to_sqlite, execution_date=20240127T205052, start_date=20240127T205102, end_date=20240127T205102
+[2024-01-27T20:51:03.051+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2024-01-27T20:51:03.060+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

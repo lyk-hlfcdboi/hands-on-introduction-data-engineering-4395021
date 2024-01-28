@@ -1,0 +1,51 @@
+[2024-01-27T03:20:56.917+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: extract_dag.extract_task manual__2024-01-27T03:20:53.722916+00:00 [queued]>
+[2024-01-27T03:20:56.922+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: extract_dag.extract_task manual__2024-01-27T03:20:53.722916+00:00 [queued]>
+[2024-01-27T03:20:56.922+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2024-01-27T03:20:56.957+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): extract_task> on 2024-01-27 03:20:53.722916+00:00
+[2024-01-27T03:20:56.960+0000] {standard_task_runner.py:57} INFO - Started process 10840 to run task
+[2024-01-27T03:20:56.963+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'extract_dag', 'extract_task', 'manual__2024-01-27T03:20:53.722916+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/extract_nsdq.py', '--cfg-path', '/tmp/tmpep4li9qr']
+[2024-01-27T03:20:56.963+0000] {standard_task_runner.py:85} INFO - Job 8: Subtask extract_task
+[2024-01-27T03:20:57.011+0000] {task_command.py:410} INFO - Running <TaskInstance: extract_dag.extract_task manual__2024-01-27T03:20:53.722916+00:00 [running]> on host codespaces-ca3784
+[2024-01-27T03:20:57.101+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='extract_dag' AIRFLOW_CTX_TASK_ID='extract_task' AIRFLOW_CTX_EXECUTION_DATE='2024-01-27T03:20:53.722916+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-01-27T03:20:53.722916+00:00'
+[2024-01-27T03:20:57.102+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-01-27T03:20:57.102+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'wget -c https://data.nasdaq.com/api/v3/datasets/WIKI/AAPL.json -O /workspaces/hands-on-introduction-data-engineering-4395021/lab/AAPL_nsdq.json']
+[2024-01-27T03:20:57.109+0000] {subprocess.py:86} INFO - Output:
+[2024-01-27T03:20:57.113+0000] {subprocess.py:93} INFO - --2024-01-27 03:20:57--  https://data.nasdaq.com/api/v3/datasets/WIKI/AAPL.json
+[2024-01-27T03:20:57.125+0000] {subprocess.py:93} INFO - Resolving data.nasdaq.com (data.nasdaq.com)... 45.60.150.18
+[2024-01-27T03:20:57.133+0000] {subprocess.py:93} INFO - Connecting to data.nasdaq.com (data.nasdaq.com)|45.60.150.18|:443... connected.
+[2024-01-27T03:20:59.113+0000] {subprocess.py:93} INFO - HTTP request sent, awaiting response... 200 OK
+[2024-01-27T03:20:59.113+0000] {subprocess.py:93} INFO - Length: unspecified [application/json]
+[2024-01-27T03:20:59.113+0000] {subprocess.py:93} INFO - Saving to: ‘/workspaces/hands-on-introduction-data-engineering-4395021/lab/AAPL_nsdq.json’
+[2024-01-27T03:20:59.113+0000] {subprocess.py:93} INFO - 
+[2024-01-27T03:20:59.203+0000] {subprocess.py:93} INFO -      0K .......... .......... .......... .......... ..........  556K
+[2024-01-27T03:20:59.265+0000] {subprocess.py:93} INFO -     50K .......... .......... .......... .......... ..........  809K
+[2024-01-27T03:20:59.330+0000] {subprocess.py:93} INFO -    100K .......... .......... .......... .......... ..........  762K
+[2024-01-27T03:20:59.333+0000] {subprocess.py:93} INFO -    150K .......... .......... .......... .......... .......... 19.0M
+[2024-01-27T03:20:59.386+0000] {subprocess.py:93} INFO -    200K .......... .......... .......... .......... ..........  941K
+[2024-01-27T03:20:59.388+0000] {subprocess.py:93} INFO -    250K .......... .......... .......... .......... .......... 22.5M
+[2024-01-27T03:20:59.390+0000] {subprocess.py:93} INFO -    300K .......... .......... .......... .......... .......... 27.1M
+[2024-01-27T03:20:59.433+0000] {subprocess.py:93} INFO -    350K .......... .......... .......... .......... .......... 1.14M
+[2024-01-27T03:20:59.455+0000] {subprocess.py:93} INFO -    400K .......... .......... .......... .......... .......... 2.25M
+[2024-01-27T03:20:59.458+0000] {subprocess.py:93} INFO -    450K .......... .......... .......... .......... .......... 15.6M
+[2024-01-27T03:20:59.468+0000] {subprocess.py:93} INFO -    500K .......... .......... .......... .......... .......... 4.69M
+[2024-01-27T03:20:59.469+0000] {subprocess.py:93} INFO -    550K .......... .......... .......... .......... .......... 49.4M
+[2024-01-27T03:20:59.470+0000] {subprocess.py:93} INFO -    600K .......... .......... .......... .......... .......... 60.5M
+[2024-01-27T03:20:59.470+0000] {subprocess.py:93} INFO -    650K .......... .......... .......... .......... .......... 83.8M
+[2024-01-27T03:20:59.471+0000] {subprocess.py:93} INFO -    700K .......... .......... .......... .......... .......... 93.7M
+[2024-01-27T03:20:59.522+0000] {subprocess.py:93} INFO -    750K .......... .......... .......... .......... ..........  975K
+[2024-01-27T03:20:59.537+0000] {subprocess.py:93} INFO -    800K .......... .......... .......... .......... .......... 3.40M
+[2024-01-27T03:20:59.538+0000] {subprocess.py:93} INFO -    850K .......... .......... .......... .......... .......... 36.4M
+[2024-01-27T03:20:59.538+0000] {subprocess.py:93} INFO -    900K .......... .......... .......... .......... .......... 93.1M
+[2024-01-27T03:20:59.539+0000] {subprocess.py:93} INFO -    950K .......... .......... .......... .......... .......... 98.6M
+[2024-01-27T03:20:59.539+0000] {subprocess.py:93} INFO -   1000K .......... .......... .......... .......... ..........  105M
+[2024-01-27T03:20:59.540+0000] {subprocess.py:93} INFO -   1050K .......... .......... .......... .......... .......... 72.4M
+[2024-01-27T03:20:59.541+0000] {subprocess.py:93} INFO -   1100K .......... .......... .......... .......... .......... 47.5M
+[2024-01-27T03:20:59.542+0000] {subprocess.py:93} INFO -   1150K .......... .......... .......... .......... .......... 75.1M
+[2024-01-27T03:20:59.542+0000] {subprocess.py:93} INFO -   1200K .......... .........                                    135M=0.4s
+[2024-01-27T03:20:59.542+0000] {subprocess.py:93} INFO - 
+[2024-01-27T03:20:59.542+0000] {subprocess.py:93} INFO - 2024-01-27 03:20:59 (2.78 MB/s) - ‘/workspaces/hands-on-introduction-data-engineering-4395021/lab/AAPL_nsdq.json’ saved [1248790]
+[2024-01-27T03:20:59.542+0000] {subprocess.py:93} INFO - 
+[2024-01-27T03:20:59.543+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-01-27T03:20:59.581+0000] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=extract_dag, task_id=extract_task, execution_date=20240127T032053, start_date=20240127T032056, end_date=20240127T032059
+[2024-01-27T03:20:59.662+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2024-01-27T03:20:59.674+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

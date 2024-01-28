@@ -1,0 +1,29 @@
+[2024-01-27T20:37:50.147+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_1.extract_task manual__2024-01-27T20:37:46.581992+00:00 [queued]>
+[2024-01-27T20:37:50.151+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_1.extract_task manual__2024-01-27T20:37:46.581992+00:00 [queued]>
+[2024-01-27T20:37:50.152+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2024-01-27T20:37:50.186+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): extract_task> on 2024-01-27 20:37:46.581992+00:00
+[2024-01-27T20:37:50.189+0000] {standard_task_runner.py:57} INFO - Started process 5226 to run task
+[2024-01-27T20:37:50.192+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'ETL_1', 'extract_task', 'manual__2024-01-27T20:37:46.581992+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/ETL_1.py', '--cfg-path', '/tmp/tmpnyqsfkdt']
+[2024-01-27T20:37:50.192+0000] {standard_task_runner.py:85} INFO - Job 18: Subtask extract_task
+[2024-01-27T20:37:50.243+0000] {task_command.py:410} INFO - Running <TaskInstance: ETL_1.extract_task manual__2024-01-27T20:37:46.581992+00:00 [running]> on host codespaces-ca3784
+[2024-01-27T20:37:50.330+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ETL_1' AIRFLOW_CTX_TASK_ID='extract_task' AIRFLOW_CTX_EXECUTION_DATE='2024-01-27T20:37:46.581992+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-01-27T20:37:46.581992+00:00'
+[2024-01-27T20:37:50.331+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-01-27T20:37:50.331+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'wget -c https://data.nasdaq.com/api/v3/datasets/WIKI/FB.json -O /workspaces/hands-on-introduction-data-engineering-4395021/lab/FB_nsdq.json']
+[2024-01-27T20:37:50.340+0000] {subprocess.py:86} INFO - Output:
+[2024-01-27T20:37:50.344+0000] {subprocess.py:93} INFO - --2024-01-27 20:37:50--  https://data.nasdaq.com/api/v3/datasets/WIKI/FB.json
+[2024-01-27T20:37:50.360+0000] {subprocess.py:93} INFO - Resolving data.nasdaq.com (data.nasdaq.com)... 45.60.150.18
+[2024-01-27T20:37:50.368+0000] {subprocess.py:93} INFO - Connecting to data.nasdaq.com (data.nasdaq.com)|45.60.150.18|:443... connected.
+[2024-01-27T20:37:50.932+0000] {subprocess.py:93} INFO - HTTP request sent, awaiting response... 200 OK
+[2024-01-27T20:37:50.932+0000] {subprocess.py:93} INFO - Length: unspecified [application/json]
+[2024-01-27T20:37:50.932+0000] {subprocess.py:93} INFO - Saving to: ‘/workspaces/hands-on-introduction-data-engineering-4395021/lab/FB_nsdq.json’
+[2024-01-27T20:37:50.932+0000] {subprocess.py:93} INFO - 
+[2024-01-27T20:37:50.997+0000] {subprocess.py:93} INFO -      0K .......... .......... .......... .......... ..........  768K
+[2024-01-27T20:37:51.062+0000] {subprocess.py:93} INFO -     50K .......... .......... .......... .......... ..........  769K
+[2024-01-27T20:37:51.062+0000] {subprocess.py:93} INFO -    100K .......... .......... .......... .........             62.7M=0.1s
+[2024-01-27T20:37:51.063+0000] {subprocess.py:93} INFO - 
+[2024-01-27T20:37:51.063+0000] {subprocess.py:93} INFO - 2024-01-27 20:37:51 (1.04 MB/s) - ‘/workspaces/hands-on-introduction-data-engineering-4395021/lab/FB_nsdq.json’ saved [142404]
+[2024-01-27T20:37:51.063+0000] {subprocess.py:93} INFO - 
+[2024-01-27T20:37:51.063+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-01-27T20:37:51.100+0000] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=ETL_1, task_id=extract_task, execution_date=20240127T203746, start_date=20240127T203750, end_date=20240127T203751
+[2024-01-27T20:37:51.166+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2024-01-27T20:37:51.181+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

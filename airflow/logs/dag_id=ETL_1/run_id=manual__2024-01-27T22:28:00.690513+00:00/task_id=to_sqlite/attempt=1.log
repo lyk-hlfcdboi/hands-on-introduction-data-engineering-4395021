@@ -1,0 +1,23 @@
+[2024-01-27T22:28:12.474+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_1.to_sqlite manual__2024-01-27T22:28:00.690513+00:00 [queued]>
+[2024-01-27T22:28:12.479+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_1.to_sqlite manual__2024-01-27T22:28:00.690513+00:00 [queued]>
+[2024-01-27T22:28:12.479+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2024-01-27T22:28:12.514+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): to_sqlite> on 2024-01-27 22:28:00.690513+00:00
+[2024-01-27T22:28:12.518+0000] {standard_task_runner.py:57} INFO - Started process 47174 to run task
+[2024-01-27T22:28:12.521+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'ETL_1', 'to_sqlite', 'manual__2024-01-27T22:28:00.690513+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/ETL_1.py', '--cfg-path', '/tmp/tmp_d9mmd34']
+[2024-01-27T22:28:12.521+0000] {standard_task_runner.py:85} INFO - Job 47: Subtask to_sqlite
+[2024-01-27T22:28:12.568+0000] {task_command.py:410} INFO - Running <TaskInstance: ETL_1.to_sqlite manual__2024-01-27T22:28:00.690513+00:00 [running]> on host codespaces-ca3784
+[2024-01-27T22:28:12.662+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ETL_1' AIRFLOW_CTX_TASK_ID='to_sqlite' AIRFLOW_CTX_EXECUTION_DATE='2024-01-27T22:28:00.690513+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-01-27T22:28:00.690513+00:00'
+[2024-01-27T22:28:12.663+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-01-27T22:28:12.663+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo -e "CREATE TABLE IF NOT EXISTS monthly_info (Date DATETIME, Monthly Max FLOAT, Monthly Low FLOAT, Mean Volume per Day FLOAT);\n.separator ","\n.import /workspaces/hands-on-introduction-data-engineering-4395021/lab/monthly_info.csv monthly_info" | sqlite3 /workspaces/hands-on-introduction-data-engineering-4395021/lab/challenge/challenge-load-db.db']
+[2024-01-27T22:28:12.672+0000] {subprocess.py:86} INFO - Output:
+[2024-01-27T22:28:12.675+0000] {subprocess.py:93} INFO - Parse error near line 1: duplicate column name: Monthly
+[2024-01-27T22:28:12.726+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-01-27T22:28:12.731+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/python/3.10.13/lib/python3.10/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-01-27T22:28:12.733+0000] {taskinstance.py:1345} INFO - Marking task as FAILED. dag_id=ETL_1, task_id=to_sqlite, execution_date=20240127T222800, start_date=20240127T222812, end_date=20240127T222812
+[2024-01-27T22:28:12.767+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 47 for task to_sqlite (Bash command failed. The command returned a non-zero exit code 1.; 47174)
+[2024-01-27T22:28:12.813+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2024-01-27T22:28:12.822+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
